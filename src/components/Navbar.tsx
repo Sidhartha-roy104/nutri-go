@@ -168,10 +168,30 @@ export default function Navbar() {
                     </Link>
                   )
                 ))}
+
+                <button
+                  onClick={() => {
+                    setOpen(false);
+                    openCart();
+                  }}
+                  className="flex items-center justify-between rounded-2xl bg-brand-green/10 px-4 py-3 font-semibold text-brand-green-deep transition-colors hover:bg-brand-green/20 text-left mt-1"
+                >
+                  <span className="flex items-center gap-2.5">
+                    <ShoppingBag size={18} className="text-brand-green" /> Your Cart
+                  </span>
+                  {totalCount > 0 ? (
+                    <span className="rounded-full bg-brand-green px-2.5 py-0.5 text-xs font-bold text-white">
+                      {totalCount} {totalCount === 1 ? 'item' : 'items'}
+                    </span>
+                  ) : (
+                    <span className="text-xs text-brand-muted">Empty</span>
+                  )}
+                </button>
+
                 <a
                   href="/#plans"
                   onClick={() => setOpen(false)}
-                  className="btn-primary mt-4"
+                  className="btn-primary mt-3 text-center"
                 >
                   Order Now
                 </a>

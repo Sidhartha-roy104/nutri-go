@@ -1,28 +1,18 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, ArrowRight } from 'lucide-react';
+import { Plus, ArrowRight, Minus } from 'lucide-react';
 import { bowls, tierLabels, tierDescriptions, type BowlTier } from '../data/bowls';
 import VegIcon from '../components/VegIcon';
 import WaveDivider from '../components/WaveDivider';
+import { useCart } from '../context/CartContext';
 
 const tiers: BowlTier[] = ['protein', 'regular', 'juices', 'salads'];
 
 export default function Menu() {
   const [active, setActive] = useState<BowlTier>('protein');
-  const [added, setAdded] = useState<Set<string>>(new Set());
+  const { addItem, items, updateQty, removeItem } = useCart();
 
   const list = bowls.filter((b) => b.tier === active);
-
-  const handleAdd = (id: string) => {
-    setAdded((prev) => new Set(prev).add(id));
-    window.setTimeout(() => {
-      setAdded((prev) => {
-        const next = new Set(prev);
-        next.delete(id);
-        return next;
-      });
-    }, 1500);
-  };
 
   return (
     <>
@@ -71,7 +61,9 @@ export default function Menu() {
               transition={{ duration: 0.3 }}
               className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 [&>*:last-child:nth-child(3n+1)]:lg:col-start-2 [&>*:last-child:nth-child(4n+1)]:xl:col-start-2"
             >
-              {list.map((b, i) => (
+              {list.map((b, i) => {
+              const cartItem = items.find((item) => item.id === b.id);
+              return (
                 <motion.article
                   key={b.id}
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -100,24 +92,41 @@ export default function Menu() {
                   </p>
                   <div className="mt-auto flex items-center justify-between pt-4">
                     <span className="text-lg font-extrabold text-brand-green-deep">₹{b.price}</span>
-                    <button
-                      onClick={() => handleAdd(b.id)}
-                      className={`inline-flex items-center gap-1.5 rounded-full border-2 px-4 py-2 text-xs font-bold transition-all ${added.has(b.id)
-                        ? 'border-brand-green bg-brand-green text-white'
-                        : 'border-brand-green/70 text-brand-green hover:bg-brand-green hover:text-white'
-                        }`}
-                    >
-                      {added.has(b.id) ? (
-                        <>Added</>
-                      ) : (
-                        <>
-                          <Plus size={14} /> Add to cart
-                        </>
-                      )}
-                    </button>
+                    {cartItem ? (
+                      <div className="flex items-center gap-2 rounded-full border border-brand-green bg-brand-green/10 px-2.5 py-1">
+                        <button
+                          onClick={() => {
+                            if (cartItem.quantity === 1) removeItem(b.id);
+                            else updateQty(b.id, -1);
+                          }}
+                          className="grid h-6 w-6 place-items-center rounded-full bg-brand-cream text-brand-green-deep transition hover:bg-brand-green hover:text-white"
+                          aria-label="Decrease quantity"
+                        >
+                          <Minus size={13} />
+                        </button>
+                        <span className="w-4 text-center text-xs font-bold text-brand-green-deep">
+                          {cartItem.quantity}
+                        </span>
+                        <button
+                          onClick={() => updateQty(b.id, 1)}
+                          className="grid h-6 w-6 place-items-center rounded-full bg-brand-cream text-brand-green-deep transition hover:bg-brand-green hover:text-white"
+                          aria-label="Increase quantity"
+                        >
+                          <Plus size={13} />
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={() => addItem({ id: b.id, name: b.name, price: b.price })}
+                        className="inline-flex items-center gap-1.5 rounded-full border-2 border-brand-green/70 px-4 py-2 text-xs font-bold text-brand-green transition-all hover:bg-brand-green hover:text-white active:scale-95"
+                      >
+                        <Plus size={14} /> Add to cart
+                      </button>
+                    )}
                   </div>
                 </motion.article>
-              ))}
+              );
+            })}
             </motion.div>
           </AnimatePresence>
 

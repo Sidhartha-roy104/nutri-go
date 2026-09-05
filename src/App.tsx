@@ -3,6 +3,7 @@ import { CartProvider } from './context/CartContext';
 import Home from './pages/Home';
 import MenuLayout from './pages/MenuLayout';
 import ContactPage from './pages/ContactPage';
+import FloatingCartBar from './components/FloatingCartBar';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/menu" element={<MenuLayout />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
+      <FloatingCartBar />
     </CartProvider>
   );
 }

@@ -1,13 +1,13 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Plus, ArrowRight } from 'lucide-react';
+import { Plus, ArrowRight, Minus } from 'lucide-react';
 import { bowls } from '../data/bowls';
 import VegIcon from '../components/VegIcon';
 import WaveDivider from '../components/WaveDivider';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 export default function MenuPreview() {
-  const [added, setAdded] = useState<Set<string>>(new Set());
+  const { addItem, items, updateQty, removeItem } = useCart();
 
   // Featured items: 2 Protein, 1 Regular, 1 Juice, 2 Salads
   const featuredIds = [
@@ -19,17 +19,6 @@ export default function MenuPreview() {
     'spicy-egg-salad',
   ];
   const featured = bowls.filter((b) => featuredIds.includes(b.id));
-
-  const handleAdd = (id: string) => {
-    setAdded((prev) => new Set(prev).add(id));
-    window.setTimeout(() => {
-      setAdded((prev) => {
-        const next = new Set(prev);
-        next.delete(id);
-        return next;
-      });
-    }, 1500);
-  };
 
   return (
     <>
@@ -54,15 +43,17 @@ export default function MenuPreview() {
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5 justify-items-center"
           >
-            {featured.map((b, i) => (
-              <motion.article
-                key={b.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex flex-col rounded-3xl bg-[#F7F2E3] p-5 ring-1 ring-brand-cream-dark/10 backdrop-blur-sm transition hover:brightness-95 w-full"
-              >
+            {featured.map((b, i) => {
+              const cartItem = items.find((item) => item.id === b.id);
+              return (
+                <motion.article
+                  key={b.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex flex-col rounded-3xl bg-[#F7F2E3] p-5 ring-1 ring-brand-cream-dark/10 backdrop-blur-sm transition hover:brightness-95 w-full"
+                >
                   <div className="squircle-wrap mx-auto mb-4">
                     <img
                       src={b.image}
@@ -70,37 +61,54 @@ export default function MenuPreview() {
                       loading="lazy"
                     />
                   </div>
-                <div className="flex items-center gap-2">
-                  <VegIcon veg={b.veg} size={14} />
-                  <h3 className="text-sm font-bold leading-tight text-brand-green-deep line-clamp-2">
-                    {b.name}
-                  </h3>
-                </div>
-                <p className="mt-1.5 text-xs font-semibold text-brand-green">
-                  {b.tier === 'juices'
-                    ? b.ingredients
-                    : `${b.protein}g protein · ${b.kcal} kcal · ${b.fiber}g fiber`}
-                </p>
-                <div className="mt-auto flex items-center justify-between pt-4">
-                  <span className="text-lg font-extrabold text-brand-green-deep">₹{b.price}</span>
-                  <button
-                    onClick={() => handleAdd(b.id)}
-                    className={`inline-flex items-center gap-1.5 rounded-full border-2 px-4 py-2 text-xs font-bold transition-all ${added.has(b.id)
-                        ? 'border-brand-green bg-brand-green text-white'
-                        : 'border-brand-green/70 text-brand-green hover:bg-brand-green hover:text-white'
-                      }`}
-                  >
-                    {added.has(b.id) ? (
-                      <>Added</>
+                  <div className="flex items-center gap-2">
+                    <VegIcon veg={b.veg} size={14} />
+                    <h3 className="text-sm font-bold leading-tight text-brand-green-deep line-clamp-2">
+                      {b.name}
+                    </h3>
+                  </div>
+                  <p className="mt-1.5 text-xs font-semibold text-brand-green">
+                    {b.tier === 'juices'
+                      ? b.ingredients
+                      : `${b.protein}g protein · ${b.kcal} kcal · ${b.fiber}g fiber`}
+                  </p>
+                  <div className="mt-auto flex items-center justify-between pt-4">
+                    <span className="text-lg font-extrabold text-brand-green-deep">₹{b.price}</span>
+                    {cartItem ? (
+                      <div className="flex items-center gap-2 rounded-full border border-brand-green bg-brand-green/10 px-2.5 py-1">
+                        <button
+                          onClick={() => {
+                            if (cartItem.quantity === 1) removeItem(b.id);
+                            else updateQty(b.id, -1);
+                          }}
+                          className="grid h-6 w-6 place-items-center rounded-full bg-brand-cream text-brand-green-deep transition hover:bg-brand-green hover:text-white"
+                          aria-label="Decrease quantity"
+                        >
+                          <Minus size={13} />
+                        </button>
+                        <span className="w-4 text-center text-xs font-bold text-brand-green-deep">
+                          {cartItem.quantity}
+                        </span>
+                        <button
+                          onClick={() => updateQty(b.id, 1)}
+                          className="grid h-6 w-6 place-items-center rounded-full bg-brand-cream text-brand-green-deep transition hover:bg-brand-green hover:text-white"
+                          aria-label="Increase quantity"
+                        >
+                          <Plus size={13} />
+                        </button>
+                      </div>
                     ) : (
-                      <>
+                      <button
+                        onClick={() => addItem({ id: b.id, name: b.name, price: b.price })}
+                        className="inline-flex items-center gap-1.5 rounded-full border-2 border-brand-green/70 px-4 py-2 text-xs font-bold text-brand-green transition-all hover:bg-brand-green hover:text-white active:scale-95"
+                      >
                         <Plus size={14} /> Add
-                      </>
+                      </button>
                     )}
-                  </button>
-                </div>
-              </motion.article>
-            ))}
+                  </div>
+                </motion.article>
+              );
+            })}
           </motion.div>
 
           <div className="mt-10 flex justify-center">
