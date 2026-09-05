@@ -54,7 +54,7 @@ export const tierPrices: Record<BowlTier, string> = {
 export const tierDescriptions: Record<BowlTier, string> = {
   'protein': 'Veg · 20-30g protein',
   'regular': 'Veg & Non-veg · ~33g protein',
-  'juices': '100% Organic · Cold-pressed',
+  'juices': '100% Organic · Juices',
   'salads': 'Fresh · Veg & Non-veg'
 };
 
@@ -83,7 +83,7 @@ export const bowls: Bowl[] = [
     protein: 25,
     fiber: 12,
     price: 189,
-    image: '/assets/Super nutrition bowll.webp',
+    image: '/assets/Super nutrition bowl.webp',
   },
   {
     id: 'sprouted-moong-dragon-fruit',
@@ -94,7 +94,7 @@ export const bowls: Bowl[] = [
     protein: 18,
     fiber: 11,
     price: 169,
-    image: '/assets/Sprouted Moong & Dragon Fruit Bowll.webp',
+    image: '/assets/Sprouted Moong & Dragon Fruit Bowl.webp',
   },
   {
     id: 'soya-chunk-tikka-rice',
@@ -149,7 +149,7 @@ export const bowls: Bowl[] = [
     protein: 20,
     fiber: 12,
     price: 149,
-    image: '/assets/ChickPea Bowll.webp',
+    image: '/assets/ChickPea Bowl.webp',
   },
   // REGULAR BOWLS
   {
@@ -183,7 +183,7 @@ export const bowls: Bowl[] = [
     protein: 35,
     fiber: 7,
     price: 199,
-    image: '/assets/Grilled creamy chicken bowll.webp',
+    image: '/assets/Grilled creamy chicken bowl.webp',
   },
   {
     id: 'grilled-paneer-chicken-quinoa',
@@ -207,7 +207,7 @@ export const bowls: Bowl[] = [
     volume: '330 ml',
     ingredients: '330 ml',
     price: 80,
-    image: '/assets/detox_drink.webp',
+    image: '/assets/detox_drink_fixed.webp',
   },
   {
     id: 'fresh-orange-juice',
@@ -217,7 +217,7 @@ export const bowls: Bowl[] = [
     volume: '330 ml',
     ingredients: '300 ml',
     price: 80,
-    image: '/assets/lemon_juice.webp',
+    image: '/assets/lemon_juice_fixed.webp',
   },
   {
     id: 'beetroot-juice',
@@ -227,7 +227,7 @@ export const bowls: Bowl[] = [
     volume: '330 ml',
     ingredients: '300 ml',
     price: 80,
-    image: '/assets/beetroot_juice.webp',
+    image: '/assets/beetroot_juice_fixed.webp',
   },
   {
     id: 'bitter-gourd-juice',
@@ -237,7 +237,7 @@ export const bowls: Bowl[] = [
     volume: '330 ml',
     ingredients: '330 ml',
     price: 80,
-    image: '/assets/bitterguard_juice.webp',
+    image: '/assets/bitterguard_juice_fixed.webp',
   },
   {
     id: 'Protien Shake',
@@ -281,7 +281,7 @@ export const bowls: Bowl[] = [
     protein: 14,
     fiber: 8,
     price: 159,
-    image: '/assets/Creamy corn & almond salad Bowll.webp',
+    image: '/assets/Creamy corn & almond salad Bowl.webp',
   },
   {
     id: 'spicy-egg-salad',
