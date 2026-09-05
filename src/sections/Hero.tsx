@@ -9,13 +9,13 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand-cream pt-20 pb-12 md:pt-28 md:pb-20">
-      <div className="absolute inset-0">
+    <section className="relative overflow-hidden bg-brand-cream pt-20 pb-12 md:pt-28 md:pb-20 max-w-full">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-brand-green/10 blur-3xl" />
         <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-brand-green/5 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-6 lg:gap-10 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:gap-10 lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

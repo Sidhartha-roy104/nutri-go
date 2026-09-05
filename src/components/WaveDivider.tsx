@@ -11,13 +11,13 @@ export default function WaveDivider({
 }: Props) {
   return (
     <div
-      className={`pointer-events-none w-full overflow-hidden leading-none ${className}`}
-      style={{ transform: flip ? 'rotate(180deg)' : undefined }}
+      className={`pointer-events-none w-full max-w-full overflow-hidden leading-none ${className}`}
+      style={{ transform: flip ? 'rotate(180deg)' : undefined, transformOrigin: 'center center' }}
     >
       <svg
         viewBox="0 0 1440 80"
         preserveAspectRatio="none"
-        className="block h-[40px] w-full md:h-[60px]"
+        className="block h-[40px] w-full max-w-full md:h-[60px]"
         style={{ fill: color }}
       >
         <path d="M0,32 C240,80 480,0 720,32 C960,64 1200,16 1440,40 L1440,80 L0,80 Z" />

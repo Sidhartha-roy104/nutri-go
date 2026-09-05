@@ -5,10 +5,10 @@ import CartDrawer from '../components/CartDrawer';
 
 export default function MenuLayout() {
   return (
-    <div className="min-h-screen bg-brand-cream">
+    <div className="min-h-screen bg-brand-cream max-w-[100vw] overflow-x-hidden">
       <Navbar />
       <CartDrawer />
-      <main>
+      <main className="max-w-full overflow-x-hidden">
         <MenuPage />
       </main>
       <Footer />

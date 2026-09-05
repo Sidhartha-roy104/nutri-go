@@ -39,23 +39,23 @@ export default function MenuPage() {
 
       {/* Wave transition from dark green hero into cream section */}
       <div
-        className="pointer-events-none w-full overflow-hidden leading-none -mt-px -mb-px"
+        className="pointer-events-none w-full max-w-full overflow-hidden leading-none -mt-px -mb-px"
         style={{ background: '#F7F2E3' }}
       >
         <svg
           viewBox="0 0 1440 80"
           preserveAspectRatio="none"
-          className="block h-[48px] w-full md:h-[70px]"
+          className="block h-[48px] w-full max-w-full md:h-[70px]"
           style={{ fill: '#1B5E32' }}
         >
           <path d="M0,0 L1440,0 L1440,20 C1080,80 360,80 0,20 Z" />
         </svg>
       </div>
 
-      <section className="bg-[#F7F2E3] py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="bg-[#F7F2E3] py-12 md:py-16 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
 
-          <div id="menu-tabs" className="mb-8 flex flex-wrap justify-center gap-2">
+          <div id="menu-tabs" className="mb-8 flex flex-wrap justify-center gap-2 max-w-full">
             {tiers.map((t) => (
               <button
                 key={t}
@@ -189,7 +189,7 @@ export default function MenuPage() {
             </div>
 
             {/* Category pills */}
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-2 max-w-full">
               {[
                 'Gym Bowls',
                 'Weight Loss Bowls',
@@ -205,7 +205,7 @@ export default function MenuPage() {
                       document.getElementById('menu-tabs')?.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="rounded-full px-3.5 py-1.5 text-xs font-semibold text-white transition hover:opacity-80"
+                  className="rounded-full px-3.5 py-1.5 text-xs font-semibold text-white transition hover:opacity-80 text-center max-w-full"
                   style={{ backgroundColor: 'rgba(143, 201, 107, 0.22)' }}
                 >
                   {label}
