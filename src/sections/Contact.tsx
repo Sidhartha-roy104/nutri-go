@@ -71,7 +71,7 @@ export default function Contact() {
 
             <div className="w-full flex justify-center">
               <img
-                src="/assets/323.png"
+                src="/assets/323.webp"
                 alt="Nutri Goo Instagram Preview"
                 className="w-full max-w-[250px] sm:max-w-[250px] rounded-[16px] shadow-card object-contain border border-brand-green/10 transition-transform duration-300 hover:scale-[1.02]"
               />

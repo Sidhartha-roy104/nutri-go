@@ -62,7 +62,7 @@ export default function Hero() {
         >
           <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
             <img
-              src="/assets/Gym protein bowl ADD.jpeg"
+              src="/assets/Gym protein bowl ADD.webp"
               alt="High-protein bowl"
               className="h-full w-full object-cover shadow-glow"
             />

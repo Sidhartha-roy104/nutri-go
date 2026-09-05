@@ -20,7 +20,7 @@ export default function Founder() {
         >
           <div className="relative overflow-hidden rounded-3xl shadow-card">
             <img
-              src="assets\Founder011.jpg"
+              src="assets\Founder011.webp"
               alt="Founder"
               className="h-96 w-full object-cover object-top scale-110 md:h-[28rem]"
             />

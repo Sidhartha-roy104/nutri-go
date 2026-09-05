@@ -49,7 +49,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-[1000] bg-brand-sage shadow-soft">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2.5">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src="/assets/323.png" alt="Nutri Goo" className="h-14 w-14 rounded-full object-cover shadow-soft" />
+          <img src="/assets/323.webp" alt="Nutri Goo" className="h-14 w-14 rounded-full object-cover shadow-soft" />
           <div>
             <p className="text-base font-extrabold text-brand-green-deep leading-tight">NUTRI <span className="text-brand-green">GOO</span></p>
             <p className="text-xs text-brand-muted">100% Organic</p>

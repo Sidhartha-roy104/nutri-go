@@ -72,7 +72,7 @@ export const bowls: Bowl[] = [
     protein: 22,
     fiber: 10,
     price: 169,
-    image: '/assets/Nutrition bowl.png',
+    image: '/assets/Nutrition bowl.webp',
   },
   {
     id: 'super-nutrition-bowl',
@@ -83,7 +83,7 @@ export const bowls: Bowl[] = [
     protein: 25,
     fiber: 12,
     price: 189,
-    image: '/assets/Super nutrition bowll.png',
+    image: '/assets/Super nutrition bowll.webp',
   },
   {
     id: 'sprouted-moong-dragon-fruit',
@@ -94,7 +94,7 @@ export const bowls: Bowl[] = [
     protein: 18,
     fiber: 11,
     price: 169,
-    image: '/assets/Sprouted Moong & Dragon Fruit Bowll.png',
+    image: '/assets/Sprouted Moong & Dragon Fruit Bowll.webp',
   },
   {
     id: 'soya-chunk-tikka-rice',
@@ -105,7 +105,7 @@ export const bowls: Bowl[] = [
     protein: 28,
     fiber: 9,
     price: 179,
-    image: '/assets/soya chunk tikka & rice bowl.png',
+    image: '/assets/soya chunk tikka & rice bowl.webp',
   },
   {
     id: 'paneer-tikka-quinoa',
@@ -116,7 +116,7 @@ export const bowls: Bowl[] = [
     protein: 26,
     fiber: 8,
     price: 189,
-    image: '/assets/paneer Tikka & quinoa bowl.png',
+    image: '/assets/paneer Tikka & quinoa bowl.webp',
   },
   {
     id: 'boiled-egg-quinoa',
@@ -127,7 +127,7 @@ export const bowls: Bowl[] = [
     protein: 30,
     fiber: 7,
     price: 179,
-    image: '/assets/Boiled Egg&Quinoa bowl.png',
+    image: '/assets/Boiled Egg&Quinoa bowl.webp',
   },
   {
     id: 'rajma-soya-brown-rice',
@@ -138,7 +138,7 @@ export const bowls: Bowl[] = [
     protein: 27,
     fiber: 13,
     price: 179,
-    image: '/assets/Rajma & Soya chunk,Brown rice Bowl.png',
+    image: '/assets/Rajma & Soya chunk,Brown rice Bowl.webp',
   },
   {
     id: 'chole-fuel',
@@ -149,7 +149,7 @@ export const bowls: Bowl[] = [
     protein: 20,
     fiber: 12,
     price: 149,
-    image: '/assets/ChickPea Bowll.png',
+    image: '/assets/ChickPea Bowll.webp',
   },
   // REGULAR BOWLS
   {
@@ -161,7 +161,7 @@ export const bowls: Bowl[] = [
     protein: 34,
     fiber: 8,
     price: 199,
-    image: '/assets/Grilled Chicken Fajita Bowl.png',
+    image: '/assets/Grilled Chicken Fajita Bowl.webp',
   },
   {
     id: 'tandoori-chicken',
@@ -172,7 +172,7 @@ export const bowls: Bowl[] = [
     protein: 36,
     fiber: 8,
     price: 199,
-    image: '/assets/Tandoori Chicken Bowl.png',
+    image: '/assets/Tandoori Chicken Bowl.webp',
   },
   {
     id: 'grilled-creamy-chicken',
@@ -183,7 +183,7 @@ export const bowls: Bowl[] = [
     protein: 35,
     fiber: 7,
     price: 199,
-    image: '/assets/Grilled creamy chicken bowll.png',
+    image: '/assets/Grilled creamy chicken bowll.webp',
   },
   {
     id: 'grilled-paneer-chicken-quinoa',
@@ -194,7 +194,7 @@ export const bowls: Bowl[] = [
     protein: 34,
     fiber: 9,
     price: 199,
-    image: '/assets/Grilled paneerChicken & quinoa bowl.png',
+    image: '/assets/Grilled paneerChicken & quinoa bowl.webp',
   },
 
 
@@ -207,7 +207,7 @@ export const bowls: Bowl[] = [
     volume: '330 ml',
     ingredients: '330 ml',
     price: 80,
-    image: '/assets/detox_drink.JPG',
+    image: '/assets/detox_drink.webp',
   },
   {
     id: 'fresh-orange-juice',
@@ -217,7 +217,7 @@ export const bowls: Bowl[] = [
     volume: '330 ml',
     ingredients: '300 ml',
     price: 80,
-    image: '/assets/lemon_juice.JPG',
+    image: '/assets/lemon_juice.webp',
   },
   {
     id: 'beetroot-juice',
@@ -227,7 +227,7 @@ export const bowls: Bowl[] = [
     volume: '330 ml',
     ingredients: '300 ml',
     price: 80,
-    image: '/assets/beetroot_juice.JPG',
+    image: '/assets/beetroot_juice.webp',
   },
   {
     id: 'bitter-gourd-juice',
@@ -237,7 +237,7 @@ export const bowls: Bowl[] = [
     volume: '330 ml',
     ingredients: '330 ml',
     price: 80,
-    image: '/assets/bitterguard_juice.JPG',
+    image: '/assets/bitterguard_juice.webp',
   },
   {
     id: 'Protien Shake',
@@ -247,7 +247,7 @@ export const bowls: Bowl[] = [
     volume: '330 ml',
     ingredients: '300 ml',
     price: 80,
-    image: '/assets/Protien shake.jpeg',
+    image: '/assets/Protien shake.webp',
   },
   // SALADS
   {
@@ -259,7 +259,7 @@ export const bowls: Bowl[] = [
     protein: 12,
     fiber: 9,
     price: 149,
-    image: '/assets/Green veggi salad bowl.png',
+    image: '/assets/Green veggi salad bowl.webp',
   },
   {
     id: 'soya-chunk-salad',
@@ -270,7 +270,7 @@ export const bowls: Bowl[] = [
     protein: 20,
     fiber: 10,
     price: 159,
-    image: '/assets/Soya Chunk Salad Bowl.png',
+    image: '/assets/Soya Chunk Salad Bowl.webp',
   },
   {
     id: 'creamy-corn-almond-salad',
@@ -281,7 +281,7 @@ export const bowls: Bowl[] = [
     protein: 14,
     fiber: 8,
     price: 159,
-    image: '/assets/Creamy corn & almond salad Bowll.png',
+    image: '/assets/Creamy corn & almond salad Bowll.webp',
   },
   {
     id: 'spicy-egg-salad',
@@ -292,7 +292,7 @@ export const bowls: Bowl[] = [
     protein: 22,
     fiber: 6,
     price: 169,
-    image: '/assets/Spicy Egg Salad Bowl.png',
+    image: '/assets/Spicy Egg Salad Bowl.webp',
   },
   {
     id: 'rajma-salad',
@@ -303,7 +303,7 @@ export const bowls: Bowl[] = [
     protein: 18,
     fiber: 12,
     price: 159,
-    image: '/assets/Rajma salad Bowl.png',
+    image: '/assets/Rajma salad Bowl.webp',
   },
   {
     id: 'beetroot-chickpea-salad',
@@ -314,7 +314,7 @@ export const bowls: Bowl[] = [
     protein: 16,
     fiber: 11,
     price: 159,
-    image: '/assets/Beetroot & chickpea bowl.png',
+    image: '/assets/Beetroot & chickpea bowl.webp',
   },
   // {
   //   id: 'tofu-bowl',

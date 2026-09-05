@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <img src="/assets/323.png" alt="Nutri Goo" className="h-16 w-16 rounded-full object-cover" />
+              <img src="/assets/323.webp" alt="Nutri Goo" className="h-16 w-16 rounded-full object-cover" />
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand-green mb-1">Nutri Goo</p>
                 <p className="text-xs text-white/70">100% Organic</p>
