@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  background-color: #EDE3C7;
+  color: #0B2B1F;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(44, 140, 74, 0.3);
+  color: #0B2B1F;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(44, 140, 74, 0.3);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(44, 140, 74, 0.5);
+}
+
+@layer components {
+  .glass {
+    background: rgba(247, 242, 227, 0.7);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(247, 242, 227, 0.6);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-green px-6 py-3 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:bg-brand-green-dark hover:shadow-glow active:scale-[0.97];
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-green-deep px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-forest active:scale-[0.97];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-green bg-transparent px-5 py-2.5 text-sm font-semibold text-brand-green transition-all duration-300 hover:bg-brand-green hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-green/20 bg-brand-cream-dark px-5 py-3 text-sm font-semibold text-brand-green-deep transition-all duration-300 hover:border-brand-green/40 hover:bg-brand-cream;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-brand-green/15 bg-brand-cream-dark px-3 py-1.5 text-xs font-medium text-brand-ink/80 transition hover:border-brand-green/40;
+  }
+
+  .card {
+    @apply rounded-3xl bg-brand-cream-dark shadow-card transition-all duration-500;
+  }
+
+  /* Squircle wrapper — apply this to the CONTAINER div, not the img */
+  .squircle-wrap {
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+    border-radius: 28%;
+    overflow: hidden;
+    border: 3px solid #8FC96B;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .squircle-wrap:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  }
+
+  .squircle-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-green/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-brand-green;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
