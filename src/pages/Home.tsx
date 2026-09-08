@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Hero from '../sections/Hero';
 import HowItWorks from '../sections/HowItWorks';
-import Kitchen from '../sections/Kitchen';
+import WhatWeProvide from '../sections/WhatWeProvide';
 import MenuPreview from '../sections/MenuPreview';
 import Plans from '../sections/Plans';
 import Founder from '../sections/Founder';
@@ -18,7 +18,7 @@ export default function Home() {
       <main className="max-w-full overflow-x-hidden">
         <Hero />
         <HowItWorks />
-        <Kitchen />
+        <WhatWeProvide />
         <MenuPreview />
         <Plans />
         <Founder />
